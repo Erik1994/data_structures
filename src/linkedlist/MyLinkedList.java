@@ -45,6 +45,10 @@ public class MyLinkedList<E> {
 
     public void printList() {
         Node<E> node = head;
+        if (node == null) {
+            System.out.println("{ empty }");
+            return;
+        }
         while (node.next != null) {
             System.out.println(node);
             node = node.next;
