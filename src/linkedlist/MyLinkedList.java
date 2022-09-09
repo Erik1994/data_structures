@@ -29,7 +29,7 @@ public class MyLinkedList<E> {
         return head == null;
     }
 
-    class Node<E> {
+    private static class Node<E> {
         private E data;
         private Node<E> next;
 

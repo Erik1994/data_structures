@@ -52,8 +52,8 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "{ Name: " + firstName +
-                "Surname: " + lastName +
-                "Id: " + id + " }";
+        return "{ Name: " + firstName + "," +
+                " Surname: " + lastName + "," +
+                " Id: " + id + " }";
     }
 }

@@ -28,6 +28,29 @@ public class MyDoublyLinkedList<E> {
         tail = node;
         ++size;
     }
+
+    public boolean addBefore(E newData, E existingData) {
+        if (isEmpty()) return false;
+        Node<E> node = head;
+        Node<E> newNode = new Node<>(newData);
+        if (node.data.equals(existingData)) {
+            addToFront(newData);
+            return true;
+        } else {
+            while (node != null) {
+                if (node.data.equals(existingData)) {
+                    newNode.previous = node.previous;
+                    newNode.next = node;
+                    node.previous.next = newNode;
+                    node.previous = newNode;
+                    ++size;
+                    return true;
+                }
+                node = node.next;
+            }
+        }
+        return false;
+    }
     public E removeFromFront() {
         if (isEmpty()) return null;
         Node<E> node = head;
@@ -65,7 +88,7 @@ public class MyDoublyLinkedList<E> {
     public int getSize() {
         return size;
     }
-    class Node<E> {
+    private static class Node<E> {
         private E data;
         private Node<E> next;
         private Node<E> previous;
