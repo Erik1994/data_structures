@@ -1,5 +1,7 @@
 import linkedlist.MyDoublyLinkedList;
 import linkedlist.MyLinkedList;
+import stack.ArrayStack;
+import stack.Employee;
 
 public class Main {
     public static void main(String[] args) {
@@ -48,5 +50,21 @@ public class Main {
         for (Employee item : doublyLinkedList) {
             System.out.println(item);
         }
+
+        System.out.println("ArrayStack");
+        ArrayStack arrayStack = new ArrayStack(5);
+        arrayStack.push(janeJones);
+        arrayStack.push(johnDoe);
+        arrayStack.push(marySmith);
+        arrayStack.push(mikeWilson);
+        arrayStack.push(jamesBond);
+        arrayStack.printStack();
+        System.out.println(arrayStack.getSize());
+        System.out.println(arrayStack.peek());
+        System.out.println(arrayStack.getSize());
+        System.out.println(arrayStack.pop());
+        System.out.println(arrayStack.getSize());
+        arrayStack.printStack();
+        System.out.println(arrayStack.peek());
     }
 }
