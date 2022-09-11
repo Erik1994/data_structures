@@ -43,5 +43,10 @@ public class Main {
         doublyLinkedList.removeFromEnd();
         doublyLinkedList.printList();
         System.out.println(doublyLinkedList.getSize());
+
+        System.out.println("Iterable");
+        for (Employee item : doublyLinkedList) {
+            System.out.println(item);
+        }
     }
 }

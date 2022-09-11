@@ -1,6 +1,9 @@
 package linkedlist;
 
-public class MyLinkedList<E> {
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+public class MyLinkedList<E> implements Iterable<E> {
     private Node<E> head;
     private int size = 0;
 
@@ -27,6 +30,31 @@ public class MyLinkedList<E> {
 
     public boolean isEmpty() {
         return head == null;
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        return new IteratorHelper();
+    }
+
+    private class IteratorHelper implements Iterator<E> {
+        private Node<E> current;
+
+        public IteratorHelper() {
+            current = head;
+        }
+        @Override
+        public boolean hasNext() {
+            return current.next != null;
+        }
+
+        @Override
+        public E next() {
+            if (!hasNext()) throw new NoSuchElementException();
+            E data = current.data;
+            current = current.next;
+            return data;
+        }
     }
 
     private static class Node<E> {

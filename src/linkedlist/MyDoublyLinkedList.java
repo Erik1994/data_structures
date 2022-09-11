@@ -1,6 +1,9 @@
 package linkedlist;
 
-public class MyDoublyLinkedList<E> {
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+public class MyDoublyLinkedList<E> implements Iterable<E> {
     private Node<E> head;
     private Node<E> tail;
     private int size;
@@ -87,6 +90,31 @@ public class MyDoublyLinkedList<E> {
 
     public int getSize() {
         return size;
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        return new IteratorHelper();
+    }
+
+    private class IteratorHelper implements Iterator<E> {
+        private Node<E> current;
+
+        public IteratorHelper() {
+            current = head;
+        }
+        @Override
+        public boolean hasNext() {
+            return current.next != null;
+        }
+
+        @Override
+        public E next() {
+            if (!hasNext()) throw new NoSuchElementException();
+            E data = current.data;
+            current = current.next;
+            return data;
+        }
     }
     private static class Node<E> {
         private E data;
