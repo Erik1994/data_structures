@@ -1,7 +1,8 @@
 import linkedlist.MyDoublyLinkedList;
 import linkedlist.MyLinkedList;
-import stack.ArrayStack;
-import stack.Employee;
+import stackandqueu.ArrayQueue;
+import stackandqueu.ArrayStack;
+import stackandqueu.Employee;
 
 public class Main {
     public static void main(String[] args) {
@@ -66,5 +67,21 @@ public class Main {
         System.out.println(arrayStack.getSize());
         arrayStack.printStack();
         System.out.println(arrayStack.peek());
+
+        System.out.println("ArrayQueue");
+        ArrayQueue arrayQueue = new ArrayQueue(5);
+        arrayQueue.add(janeJones);
+        arrayQueue.add(johnDoe);
+        arrayQueue.add(marySmith);
+        arrayQueue.add(mikeWilson);
+        arrayQueue.add(jamesBond);
+        arrayQueue.printQueue();
+        System.out.println(arrayQueue.size());
+        System.out.println(arrayQueue.peek());
+        System.out.println(arrayQueue.size());
+        System.out.println(arrayQueue.remove());
+        System.out.println(arrayQueue.size());
+        arrayQueue.printQueue();
+        System.out.println(arrayQueue.peek());
     }
 }

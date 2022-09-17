@@ -1,4 +1,4 @@
-package stack;
+package stackandqueu;
 
 import java.util.Objects;
 
