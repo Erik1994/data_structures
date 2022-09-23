@@ -1,7 +1,5 @@
-import linkedlist.MyDoublyLinkedList;
+import hashtable.SimpleHashTable;
 import linkedlist.MyLinkedList;
-import stackandqueu.ArrayQueue;
-import stackandqueu.ArrayStack;
 import stackandqueu.Employee;
 
 public class Main {
@@ -26,62 +24,17 @@ public class Main {
         linkedList.printList();
         System.out.println(linkedList.getSize());
 
-        System.out.println("Doubly LinkedList");
-        MyDoublyLinkedList<Employee> doublyLinkedList = new MyDoublyLinkedList<>();
-        System.out.println(doublyLinkedList.isEmpty());
-        doublyLinkedList.addToFront(janeJones);
-        doublyLinkedList.addToFront(johnDoe);
-        doublyLinkedList.addToEnd(marySmith);
-        doublyLinkedList.addToEnd(mikeWilson);
-        doublyLinkedList.printList();
-        System.out.println(doublyLinkedList.getSize());
-        doublyLinkedList.addBefore(jamesBond, johnDoe);
-        doublyLinkedList.printList();
-        System.out.println(doublyLinkedList.getSize());
-        System.out.println(doublyLinkedList.getSize());
-        System.out.println(doublyLinkedList.isEmpty());
-        doublyLinkedList.removeFromFront();
-        doublyLinkedList.printList();
-        System.out.println(doublyLinkedList.getSize());
-        doublyLinkedList.removeFromEnd();
-        doublyLinkedList.printList();
-        System.out.println(doublyLinkedList.getSize());
+        SimpleHashTable hashTable = new SimpleHashTable();
+        hashTable.put("Jones", janeJones);
+        hashTable.put("Wilson", mikeWilson);
+        hashTable.put("Smith", marySmith);
+        hashTable.print();
+        System.out.println();
 
-        System.out.println("Iterable");
-        for (Employee item : doublyLinkedList) {
-            System.out.println(item);
-        }
-
-        System.out.println("ArrayStack");
-        ArrayStack arrayStack = new ArrayStack(5);
-        arrayStack.push(janeJones);
-        arrayStack.push(johnDoe);
-        arrayStack.push(marySmith);
-        arrayStack.push(mikeWilson);
-        arrayStack.push(jamesBond);
-        arrayStack.printStack();
-        System.out.println(arrayStack.getSize());
-        System.out.println(arrayStack.peek());
-        System.out.println(arrayStack.getSize());
-        System.out.println(arrayStack.pop());
-        System.out.println(arrayStack.getSize());
-        arrayStack.printStack();
-        System.out.println(arrayStack.peek());
-
-        System.out.println("ArrayQueue");
-        ArrayQueue arrayQueue = new ArrayQueue(5);
-        arrayQueue.add(janeJones);
-        arrayQueue.add(johnDoe);
-        arrayQueue.add(marySmith);
-        arrayQueue.add(mikeWilson);
-        arrayQueue.add(jamesBond);
-        arrayQueue.printQueue();
-        System.out.println(arrayQueue.size());
-        System.out.println(arrayQueue.peek());
-        System.out.println(arrayQueue.size());
-        System.out.println(arrayQueue.remove());
-        System.out.println(arrayQueue.size());
-        arrayQueue.printQueue();
-        System.out.println(arrayQueue.peek());
+        System.out.println(hashTable.remove("Jones"));
+        System.out.println(hashTable.remove("Wilson"));
+        System.out.println();
+        hashTable.print();
+        System.out.println(hashTable.get("Smith"));
     }
 }
