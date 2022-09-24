@@ -1,5 +1,4 @@
-import hashtable.SimpleHashTable;
-import linkedlist.MyLinkedList;
+import hashtable.ChainedHashTable;
 import stackandqueu.Employee;
 
 public class Main {
@@ -10,31 +9,44 @@ public class Main {
         Employee mikeWilson = new Employee("Mike", "Wilson", 3245);
         Employee jamesBond = new Employee("James", "Bond", 7);
 
-        System.out.println("Singly LinkedList");
-        MyLinkedList<Employee> linkedList = new MyLinkedList<>();
-        System.out.println(linkedList.isEmpty());
-        linkedList.addToFront(janeJones);
-        linkedList.addToFront(johnDoe);
-        linkedList.addToFront(marySmith);
-        linkedList.addToFront(mikeWilson);
-        linkedList.printList();
-        System.out.println(linkedList.getSize());
-        System.out.println(linkedList.isEmpty());
-        linkedList.removeFromFront();
-        linkedList.printList();
-        System.out.println(linkedList.getSize());
+//        System.out.println("Singly LinkedList");
+//        MyLinkedList<Employee> linkedList = new MyLinkedList<>();
+//        System.out.println(linkedList.isEmpty());
+//        linkedList.addToFront(janeJones);
+//        linkedList.addToFront(johnDoe);
+//        linkedList.addToFront(marySmith);
+//        linkedList.addToFront(mikeWilson);
+//        linkedList.printList();
+//        System.out.println(linkedList.getSize());
+//        System.out.println(linkedList.isEmpty());
+//        linkedList.removeFromFront();
+//        linkedList.printList();
+//        System.out.println(linkedList.getSize());
 
-        SimpleHashTable hashTable = new SimpleHashTable();
+//        SimpleHashTable hashTable = new SimpleHashTable();
+//        hashTable.put("Jones", janeJones);
+//        hashTable.put("Wilson", mikeWilson);
+//        hashTable.put("Smith", marySmith);
+//        hashTable.print();
+//        System.out.println();
+//
+//        System.out.println(hashTable.remove("Jones"));
+//        System.out.println(hashTable.remove("Wilson"));
+//        System.out.println();
+//        hashTable.print();
+//        System.out.println(hashTable.get("Smith"));
+
+        ChainedHashTable hashTable = new ChainedHashTable();
         hashTable.put("Jones", janeJones);
         hashTable.put("Wilson", mikeWilson);
         hashTable.put("Smith", marySmith);
-        hashTable.print();
+        hashTable.printHashTable();
         System.out.println();
 
         System.out.println(hashTable.remove("Jones"));
         System.out.println(hashTable.remove("Wilson"));
         System.out.println();
-        hashTable.print();
+        hashTable.printHashTable();
         System.out.println(hashTable.get("Smith"));
     }
 }
